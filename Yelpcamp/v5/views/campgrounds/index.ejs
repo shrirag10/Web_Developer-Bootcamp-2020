@@ -1,0 +1,82 @@
+<%- include ('../partials/header1'); %>
+
+<!-- Nav bar declaration starting -->
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">Yelp\_/Camp</a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      <!--   <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+     <ul class="nav">
+            <li class="nav-item">
+           <a class="nav-link" href="#">Sign up</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+      </ul> 
+     </div>
+  </nav>
+<!-- Nav bar declaration ending -->
+
+
+<!-- Content container -->
+<div class="container">
+
+ <!-- Jumbotron  -->
+ <header class="text-center" >
+    <div class="jumbotron ">
+        <div class="container">
+            <h1><i class="fas fa-campground"></i>Welcome to CampGrounds </h1>
+            <p>A exquisitely chosen relaxing spaces  :)</p> 
+            <p>
+           
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add a Campground</a>
+         
+            </p>
+        </div>
+    </div>
+</header>
+ <!-- Image row declarations -->
+    <div class="row text-center " style="display: flex; flex-wrap: wrap;">
+       <% campgrounds.forEach(function(campground){ %>
+        <!-- Img 1  -->
+        <div class="col-lg-4 col-md-3 col-sm-6">
+            <div class="card-deck">
+                <div class=" card img-thumbnail img-fluid" style="width: 18rem;  ">
+                    <img class="card-img-top " src="<%=campground.image%>" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text"><%= campground.name %></p>
+                        <a class="btn btn-primary btn-lg " href="/campgrounds/<%=campground._id%>">More Info</a></p> 
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+      <% }); %>
+    </div>
+
+</div>
+
+
+
+
+
+
+<%- include ('../partials/footer'); %>
+

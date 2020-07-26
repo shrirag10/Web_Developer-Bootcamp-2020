@@ -1,0 +1,46 @@
+<%- include ('../partials/header1'); %>
+
+<!-- Content container -->
+<div class="container">
+
+ <!-- Jumbotron  -->
+ <header class="text-center" >
+    <div class="jumbotron ">
+        <div class="container">
+            <h1><i class="fas fa-campground"></i>Welcome to CampGrounds </h1>
+            <p>A exquisitely chosen relaxing spaces  :)</p> 
+            <p>
+           
+                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add a Campground</a>
+         
+            </p>
+        </div>
+    </div>
+</header>
+ <!-- Image row declarations -->
+    <div class="row text-center " style="display: flex; flex-wrap: wrap;">
+       <% campgrounds.forEach(function(campground){ %>
+        <!-- Img 1  -->
+        <div class="col-lg-4 col-md-3 col-sm-6">
+            <div class="card-deck">
+                <div class=" card img-thumbnail img-fluid" style="width: 18rem;  ">
+                    <img class="card-img-top " src="<%=campground.image%>" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text"><%= campground.name %></p>
+                        <a class="btn btn-primary btn-lg " href="/campgrounds/<%=campground._id%>">More Info</a></p> 
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+      <% }); %>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include ('../partials/footer'); %>
+

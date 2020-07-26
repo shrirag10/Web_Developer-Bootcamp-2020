@@ -1,0 +1,64 @@
+<%- include ('../partials/header1'); %>
+
+
+<!-- Nav bar declaration Starting -->
+<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Yelp\_/Camp </a>
+    
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/campgrounds">About Us</a>
+        </li>
+         <li class="nav-item active">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      <!--   <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+      </ul>
+     <ul class="nav">
+            <li class="nav-item">
+           <a class="nav-link" href="#">Sign up</a>
+          </li>
+              <li class="nav-item">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+      </ul> 
+     </div>
+  </nav>
+  <!-- Nav bar ending -->
+
+<!-- Content  -->
+<div class="container">
+    <div class="row">
+     
+        <div style="width: 30%; margin: 40px auto;">
+            <h1  class="text-inline" style="text-align: center; ">Add New Comment to <%= campground.name %> </h1>
+            <!-- Form content -->
+            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">    
+                <div class="form-group " style="margin-top: 20px;">
+                    <input  type="text" name="comment[text]" placeholder=" Comment" class="form-control ">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="comment[author]" placeholder="Author" class="form-control">
+                </div>
+               
+                <div class="form-group">
+                    <button class="btn btn-lg btn-success btn-block">Submit!!!</button>
+                </div>
+                                             
+            </form>
+           <p class="text-center"><a class="btn btn-dark btn-lg " href="/campgrounds">Back</a></p> 
+        </div>
+    </div>
+</div>
+
+
+<%- include ('../partials/footer'); %>
